@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TAProject.Models.PersonsAcountInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    <button id="btnGenarate">Show PDF Repord</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LunchCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstrumentsCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EmployeeName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TravelCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LunchCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InstrumentsCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalCost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Paid)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

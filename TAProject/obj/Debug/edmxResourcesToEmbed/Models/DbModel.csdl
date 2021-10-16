@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeInformationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PersonsAcountInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TravelCost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LunchCost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="InstrumentsCost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Paid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="EmployeeInformationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PersonsAcountInfoes" EntityType="Self.PersonsAcountInfo" />
+  </EntityContainer>
+</Schema>
